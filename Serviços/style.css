@@ -12,7 +12,6 @@ body {
     overflow-x: hidden;
     
     font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
 
     display: flex;
     justify-content: center;
@@ -20,15 +19,7 @@ body {
 
     padding: 40px;
 
-    background: linear-gradient(
-        135deg,
-        #4be1ec 0%,
-        #35b3e9 35%,
-        #166fdf 70%,
-        #0a3bb3 100%
-    );
-
-    overflow-x: hidden;
+    background: #ffffff; 
 }
 
 .pagina {
@@ -42,11 +33,11 @@ body {
     padding: 40px 50px 60px;
 
     background: linear-gradient(
-        90deg,
-        #63e3e8 0%,
-        #39bae7 35%,
-        #1c83e4 70%,
-        #0d51d7 100%
+        135deg,
+        #4be1ec 0%,
+        #35b3e9 35%,
+        #166fdf 70%,
+        #0a3bb3 100%
     );
 }
 
@@ -97,7 +88,7 @@ body {
 .titulo {
     margin-top: 25px;
 
-    color: #003ea8;
+    color: #003fa8;
 
     font-size: clamp(4rem, 6vw, 5.5rem);
 
