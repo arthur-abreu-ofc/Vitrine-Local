@@ -6,124 +6,123 @@
     padding: 0;
 }
 
-html,
-body {
-    width: 100%;
-    height: 100%;
-}
-
+/* O body agora cria o fundo branco externo que você viu na imagem */
 body {
     font-family: 'DM Sans', sans-serif;
+    background-color: #f4f4f7; /* Cor branca/clara externa */
     min-height: 100vh;
-    width: 100vw;
-    /* Gradiente idêntico ao fundo da imagem enviada */
-    background: linear-gradient(135deg, #3ee1ec 0%, #32b5e8 30%, #156ede 65%, #0533ab 100%);
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 40px;
-    position: relative;
+    padding: 40px; /* Cria a margem/borda branca em volta do site */
     overflow-x: hidden;
 }
 
-.pagina {
-    max-width: 1240px;
+/* Esta caixa representa o seu site principal (a tela azul centralizada) */
+.container-site {
+    background: linear-gradient(135deg, #3ee1ec 0%, #32b5e8 30%, #156ede 65%, #0533ab 100%);
     width: 100%;
+    max-width: 1200px; /* Deixa o site bem grandinho e robusto */
+    min-height: 700px; /* Garante uma boa altura padrão */
+    border-radius: 4px; /* Leve arredondamento nos cantos como na imagem */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra suave para destacar da borda branca */
+    padding: 50px 60px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    justify-content: space-between; /* Distribui o conteúdo verticalmente */
     position: relative;
+    overflow: hidden;
     z-index: 1;
 }
 
-/* Posicionamento da imagem de borda (pétalas azuis) idêntico ao print */
+/* Posicionamento exato das pétalas decorativas no topo superior direito */
 .borda-bg {
     position: absolute;
-    top: -140px;   
-    right: -100px;  
-    width: 680px;   
+    top: -120px;   
+    right: -60px;  
+    width: 600px;   
     height: auto;
     pointer-events: none; 
     z-index: 0;      
 }
 
-/* Container para alinhar os botões do topo */
-.nav-botoes {
+/* Container que joga o grupo de botões para o canto superior direito */
+.header-navegacao {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    gap: 12px; /* Espaço entre o botão Voltar e Cadastre-se */
     width: 100%;
     position: relative;
     z-index: 10;
 }
 
-/* Estilização do novo Botão Voltar */
-.btn-voltar {
+/* Base de estilo comum para ambos os botões superiores */
+.btn-nav {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    padding: 12px 24px;
+    justify-content: center;
+    padding: 12px 28px;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Estilo do botão Voltar (Transparente/Discreto para dar foco ao de cadastro) */
+.btn-voltar {
+    background: transparent;
+    color: #000000; /* Texto preto minimalista */
 }
 
 .btn-voltar:hover {
-    background: #000000;
-    transform: translateY(-2px);
+    opacity: 0.7;
+    transform: translateY(-1px);
 }
 
-/* Botão Cadastre-se do topo direito */
+/* Estilo do botão Cadastre-se (Preto idêntico à imagem) */
 .btn-cadastre {
     background: #000000;
     color: #ffffff;
-    padding: 12px 32px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .btn-cadastre:hover {
     background: #1a1a1a;
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
-/* Título estilizado com quebras e cor azul escura correspondente */
+/* Título imponente com quebras de linha controladas */
 .titulo {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
     font-weight: 800;
-    color: #003fa7;
+    color: #0046b8; /* Tom de azul forte do print */
     line-height: 1.05;
-    max-width: 650px;
+    max-width: 600px;
     letter-spacing: -1.5px;
     margin-top: 20px;
     position: relative;
     z-index: 2;
 }
 
-/* Grid/Flex dos cards */
+/* Container alinhando os 3 círculos na horizontal */
 .cards {
     display: flex;
-    gap: 32px;
+    gap: 30px;
     width: 100%;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Card transformado em círculo perfeito */
+/* Círculos perfeitos usando a propriedade aspect-ratio */
 .card {
     flex: 1;
-    background: rgba(255, 255, 255, 0.42);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -131,64 +130,62 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 45px;
+    padding: 35px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.04);
-    background: rgba(255, 255, 255, 0.52);
+    transform: scale(1.03);
 }
 
 .card h3 {
-    font-family: 'DM Sans', sans-serif;
     font-weight: 700;
-    font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
     line-height: 1.2;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     color: #000000;
 }
 
 .card p {
-    font-family: 'DM Sans', sans-serif;
-    font-size: clamp(0.8rem, 1vw, 0.92rem);
+    font-size: clamp(0.78rem, 1vw, 0.88rem);
     line-height: 1.5;
-    color: #1a1a1a;
-    font-weight: 500;
-    max-width: 85%;
+    color: #111111;
+    font-weight: 400;
+    max-width: 88%;
 }
 
-/* Responsividade para telas de celulares e tablets */
+/* Ajustes de tela para Celulares e Tablets menores */
 @media (max-width: 900px) {
     body {
-        padding: 20px;
+        padding: 15px;
     }
 
-    .pagina {
-        gap: 30px;
+    .container-site {
+        padding: 30px 24px;
+        min-height: auto;
     }
 
     .borda-bg {
-        width: 380px;
+        width: 320px;
         top: -60px;
-        right: -60px;
+        right: -40px;
     }
 
     .titulo {
-        text-align: left;
-        margin-top: 10px;
+        font-size: 2.5rem;
+        margin-top: 30px;
     }
 
     .cards {
         flex-direction: column;
-        gap: 24px;
+        gap: 20px;
     }
 
     .card {
-        border-radius: 24px;
+        border-radius: 20px;
         aspect-ratio: auto;
-        padding: 32px 24px;
+        padding: 30px 20px;
     }
 
     .card p {
