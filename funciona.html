@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Funciona — Vitrine Local</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #0d0d0d;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagina-como-funciona {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 48px 64px 64px;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+            min-height: 100vh;
+        }
+
+        .barra-navegacao {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 36px;
+        }
+
+        .lista-links-navegacao {
+            display: flex;
+            gap: 12px;
+        }
+
+        .botao-navegacao {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            border: 2px solid #1a3a8f;
+            text-decoration: none;
+            background: transparent;
+            color: #1a3a8f;
+        }
+
+        .botao-navegacao:hover {
+            background: #1a3a8f;
+            color: #ffffff;
+        }
+
+        .botao-navegacao.destaque {
+            background: #0d0d0d;
+            color: #ffffff;
+            border-color: #0d0d0d;
+        }
+
+        .botao-navegacao.destaque:hover {
+            background: #1a3a8f;
+            border-color: #1a3a8f;
+        }
+
+        .botao-voltar {
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a3a8f;
+            text-decoration: none;
+        }
+
+        .botao-voltar:hover {
+            opacity: 0.7;
+        }
+
+        .secao-destaque {
+            width: 100%;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #7ee8fa 0%, #1565c0 100%);
+            padding: 40px 48px 48px;
+            box-sizing: border-box;
+        }
+
+        .titulo-destaque {
+            font-size: 64px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -1px;
+            margin-bottom: 36px;
+        }
+
+        .grade-cartoes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .cartao-informacao {
+            background: rgba(255,255,255,0.92);
+            border-radius: 16px;
+            padding: 28px 24px;
+            color: #0d0d0d;
+            border: 1px solid rgba(255,255,255,0.6);
+        }
+
+        .cartao-informacao:hover {
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .titulo-cartao-informacao {
+            font-size: 17px;
+            font-weight: 800;
+            color: #1a3a8f;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .texto-cartao-informacao {
+            font-size: 15px;
+            line-height: 1.65;
+            text-align: justify;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagina-como-funciona">
+        <nav class="barra-navegacao">
+            <a href="index.html" class="botao-voltar">&larr; Voltar</a>
+            <div class="lista-links-navegacao">
+                <a href="Servicos.html" class="botao-navegacao">Por que nos escolher?</a>
+                <a href="Registro.html" class="botao-navegacao destaque">Cadastre-se</a>
+            </div>
+        </nav>
+
+        <div class="secao-destaque">
+            <h2 class="titulo-destaque">COMO FUNCIONA</h2>
+            <div class="grade-cartoes">
+                <div class="cartao-informacao">
+                    <h3 class="titulo-cartao-informacao">Divulgação de negócios locais</h3>
+                    <p class="texto-cartao-informacao">O site funciona como uma vitrine digital onde empresas, lojas, restaurantes e prestadores de serviço podem divulgar seus negócios para pessoas da região. Cada empresa terá um espaço com informações importantes, fotos, contatos e localização.</p>
+                </div>
+                <div class="cartao-informacao">
+                    <h3 class="titulo-cartao-informacao">Busca rápida e prática</h3>
+                    <p class="texto-cartao-informacao">Os usuários poderão pesquisar negócios por categoria, localização ou tipo de serviço. Isso facilita encontrar empresas próximas de maneira rápida, organizada e segura.</p>
+                </div>
+                <div class="cartao-informacao">
+                    <h3 class="titulo-cartao-informacao">Conexão entre clientes e empresas</h3>
+                    <p class="texto-cartao-informacao">O site ajuda pequenos negócios a alcançarem mais clientes, enquanto os usuários descobrem serviços e produtos locais sem precisar procurar em vários lugares diferentes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

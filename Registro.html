@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre seu negócio — Vitrine Local</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #0d0d0d;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagina-registro {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 420px 1fr;
+        }
+
+        .painel-esquerdo {
+            background: linear-gradient(160deg, #7ee8fa 0%, #1565c0 100%);
+            padding: 56px 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            font-size: 22px;
+            font-weight: 800;
+            color: #1a3a8f;
+            text-decoration: none;
+        }
+
+        .titulo-painel-esquerdo {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1a3a8f;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .descricao-painel-esquerdo {
+            font-size: 15px;
+            line-height: 1.65;
+            color: rgba(10,30,90,0.75);
+        }
+
+        .lista-beneficios {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .item-beneficio {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .icone-beneficio {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 14px;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        .texto-beneficio {
+            font-size: 14px;
+            color: rgba(10,30,90,0.8);
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .painel-direito {
+            padding: 56px;
+            overflow-y: auto;
+        }
+
+        .botao-voltar {
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a3a8f;
+            text-decoration: none;
+            margin-bottom: 28px;
+        }
+
+        .botao-voltar:hover {
+            opacity: 0.7;
+        }
+
+        .titulo-formulario {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0d0d0d;
+            margin-bottom: 32px;
+        }
+
+        .campo-formulario {
+            margin-bottom: 20px;
+        }
+
+        .campo-formulario label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 7px;
+        }
+
+        .campo-formulario input,
+        .campo-formulario textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1.5px solid #e0e2e8;
+            background: #f5f6f8;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            color: #0d0d0d;
+            outline: none;
+            box-sizing: border-box;
+            resize: none;
+        }
+
+        .campo-formulario input:focus,
+        .campo-formulario textarea:focus {
+            border-color: #1565c0;
+            box-shadow: 0 0 0 3px rgba(21,101,192,0.12);
+            background: #ffffff;
+        }
+
+        .campo-formulario textarea {
+            min-height: 90px;
+        }
+
+        .rotulo-opcoes {
+            font-size: 13px;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .lista-opcoes {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .opcao-selecao {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            background: #f5f6f8;
+            border: 1.5px solid #e0e2e8;
+            cursor: pointer;
+        }
+
+        .opcao-selecao:hover {
+            border-color: #1565c0;
+            background: #f0f6ff;
+        }
+
+        .opcao-selecao input[type="radio"] {
+            display: none;
+        }
+
+        .opcao-selecao.selecionada {
+            border-color: #1565c0;
+            background: #eaf3ff;
+        }
+
+        .circulo-selecao {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #e0e2e8;
+            flex-shrink: 0;
+            background: #ffffff;
+        }
+
+        .opcao-selecao.selecionada .circulo-selecao {
+            border-color: #1565c0;
+            background: #7ee8fa;
+        }
+
+        .texto-opcao {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .botao-enviar {
+            width: 100%;
+            padding: 16px;
+            border-radius: 50px;
+            background: #0d0d0d;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .botao-enviar:hover {
+            opacity: 0.88;
+        }
+
+        .rodape-formulario {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        .rodape-formulario a {
+            color: #1565c0;
+            text-decoration: none;
+        }
+
+        .rodape-formulario a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="pagina-registro">
+
+    <div class="painel-esquerdo">
+        <a href="index.html" class="logo-link">Vitrine Local</a>
+
+        <div>
+            <h1 class="titulo-painel-esquerdo">Registre seus<br>negócios</h1>
+            <p class="descricao-painel-esquerdo">Conte-nos sobre sua empresa e suas necessidades e nós o colocaremos em contato com um especialista de vendas.</p>
+        </div>
+
+        <div class="lista-beneficios">
+            <div class="item-beneficio">
+                <div class="icone-beneficio">&#10003;</div>
+                <span class="texto-beneficio">Perfil completo com fotos, contatos e localização</span>
+            </div>
+            <div class="item-beneficio">
+                <div class="icone-beneficio">&#10003;</div>
+                <span class="texto-beneficio">Apareça nas buscas de clientes da sua região</span>
+            </div>
+            <div class="item-beneficio">
+                <div class="icone-beneficio">&#10003;</div>
+                <span class="texto-beneficio">Painel de controle para gerenciar seu cadastro</span>
+            </div>
+            <div class="item-beneficio">
+                <div class="icone-beneficio">&#10003;</div>
+                <span class="texto-beneficio">Cadastro 100% gratuito, sem taxa de adesão</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="painel-direito">
+        <a href="index.html" class="botao-voltar">&larr; Voltar ao início</a>
+
+        <p class="titulo-formulario">Preencha os dados abaixo</p>
+
+        <div class="campo-formulario">
+            <label>Nome da empresa</label>
+            <input type="text" id="nome-empresa" placeholder="Ex: Padaria do Zé">
+        </div>
+
+        <div class="campo-formulario">
+            <label>Seu nome e cargo</label>
+            <input type="text" id="nome-cargo" placeholder="Ex: Maria Silva — Proprietária">
+        </div>
+
+        <div class="campo-formulario">
+            <label>Seu e-mail profissional</label>
+            <input type="email" id="email" placeholder="contato@suaempresa.com.br">
+        </div>
+
+        <span class="rotulo-opcoes">Quantos funcionários sua empresa tem?</span>
+        <div class="lista-opcoes" id="grupo-funcionarios">
+            <div class="opcao-selecao" data-grupo="funcionarios" data-valor="apenas-eu">
+                <input type="radio" name="funcionarios" value="apenas-eu">
+                <div class="circulo-selecao"></div>
+                <span class="texto-opcao">Apenas eu (MEI / autônomo)</span>
+            </div>
+            <div class="opcao-selecao" data-grupo="funcionarios" data-valor="11-50">
+                <input type="radio" name="funcionarios" value="11-50">
+                <div class="circulo-selecao"></div>
+                <span class="texto-opcao">Entre 11 e 50</span>
+            </div>
+            <div class="opcao-selecao" data-grupo="funcionarios" data-valor="51-200">
+                <input type="radio" name="funcionarios" value="51-200">
+                <div class="circulo-selecao"></div>
+                <span class="texto-opcao">Entre 51 e 200</span>
+            </div>
+            <div class="opcao-selecao" data-grupo="funcionarios" data-valor="201-1000">
+                <input type="radio" name="funcionarios" value="201-1000">
+                <div class="circulo-selecao"></div>
+                <span class="texto-opcao">Entre 201 e 1000</span>
+            </div>
+        </div>
+
+        <div class="campo-formulario">
+            <label>Qual é o maior desafio que você está tentando resolver?</label>
+            <textarea id="desafio" placeholder="Ex: Precisamos de mais visibilidade na região..."></textarea>
+        </div>
+
+        <span class="rotulo-opcoes">Quando você pensa em começar?</span>
+        <div class="lista-opcoes" id="grupo-prazo">
+            <div class="opcao-selecao" data-grupo="prazo" data-valor="imediato">
+                <input type="radio" name="prazo" value="imediato">
+                <div class="circulo-selecao"></div>
+                <span class="texto-opcao">Imediatamente</span>
+            </div>
+            <div class="opcao-selecao" data-grupo="prazo" data-valor="semanas">
+                <input type="radio" name="prazo" value="semanas">
+                <div class="circulo-selecao"></div>
+                <span class="texto-opcao">Nas próximas semanas</span>
+            </div>
+            <div class="opcao-selecao" data-grupo="prazo" data-valor="meses">
+                <input type="radio" name="prazo" value="meses">
+                <div class="circulo-selecao"></div>
+                <span class="texto-opcao">Em 1 a 3 meses</span>
+            </div>
+        </div>
+
+        <button class="botao-enviar" id="botao-enviar">Enviar</button>
+        <p class="rodape-formulario">
+            Seus dados estão protegidos e não serão compartilhados.<br>
+            Saiba como protegemos seus dados
+        </p>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.opcao-selecao').forEach(function(opcao) {
+        opcao.addEventListener('click', function() {
+            var grupo = opcao.dataset.grupo;
+            document.querySelectorAll('.opcao-selecao[data-grupo="' + grupo + '"]').forEach(function(outra) {
+                outra.classList.remove('selecionada');
+            });
+            opcao.classList.add('selecionada');
+            opcao.querySelector('input[type="radio"]').checked = true;
+        });
+    });
+
+
+    document.getElementById('botao-enviar').addEventListener('click', function() {
+        var nomeEmpresa  = document.getElementById('nome-empresa').value.trim();
+        var nomeCargo    = document.getElementById('nome-cargo').value.trim();
+        var email        = document.getElementById('email').value.trim();
+        var funcionarios = document.querySelector('input[name="funcionarios"]:checked');
+        var prazo        = document.querySelector('input[name="prazo"]:checked');
+        var desafio      = document.getElementById('desafio').value.trim();
+
+        if (!nomeEmpresa || !nomeCargo || !email || !funcionarios || !prazo || !desafio) {
+            alert('Por favor, preencha todos os campos antes de continuar.');
+            return;
+        }
+
+        sessionStorage.setItem('empresa', JSON.stringify({
+            nome: nomeEmpresa,
+            cargo: nomeCargo,
+            email: email,
+            funcionarios: funcionarios.value,
+            prazo: prazo.value,
+            desafio: desafio
+        }));
+
+        window.location.href = 'Confirmacao.html';
+    });
+</script>
+</body>
+</html>

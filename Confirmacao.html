@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro confirmado — Vitrine Local</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagina-confirmacao {
+            max-width: 680px;
+            width: 100%;
+            margin: 32px 16px;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 48px rgba(0, 0, 0, 0.13);
+            overflow: hidden;
+        }
+
+        .cabecalho-confirmacao {
+            background: linear-gradient(135deg, #7ee8fa 0%, #1565c0 100%);
+            padding: 48px 40px 40px;
+            text-align: center;
+        }
+
+        .circulo-verificado {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+
+        .titulo-confirmacao {
+            font-size: 38px;
+            font-weight: 800;
+            color: #1a3a8f;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-confirmacao {
+            font-size: 15px;
+            color: rgba(10, 30, 90, 0.7);
+        }
+
+        .nome-empresa-confirmado {
+            font-weight: 800;
+            color: #1a3a8f;
+        }
+
+        .corpo-confirmacao {
+            padding: 36px 40px 40px;
+        }
+
+        .titulo-proximos-passos {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0d0d0d;
+            margin-bottom: 20px;
+        }
+
+        .lista-proximos-passos {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 36px;
+        }
+
+        .item-passo {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 18px;
+            border-radius: 14px;
+            background: #f5f7fb;
+            border: 1.5px solid #e8ecf4;
+        }
+
+        .numero-passo {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #7ee8fa, #1565c0);
+            color: #1a3a8f;
+            font-weight: 800;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .conteudo-passo h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0d0d0d;
+            margin-bottom: 3px;
+        }
+
+        .conteudo-passo p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .grupo-botoes-rodape {
+            display: flex;
+            gap: 14px;
+        }
+
+        .botao-ir-painel {
+            flex: 1;
+            padding: 15px 24px;
+            border-radius: 50px;
+            background: #0d0d0d;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .botao-ir-painel:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .botao-ir-inicio {
+            flex: 1;
+            padding: 15px 24px;
+            border-radius: 50px;
+            background: none;
+            color: #1a3a8f;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            border: 2px solid #1a3a8f;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .botao-ir-inicio:hover {
+            background: #1a3a8f;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pagina-confirmacao">
+
+        <div class="cabecalho-confirmacao">
+            <div class="circulo-verificado">&#10003;</div>
+            <h1 class="titulo-confirmacao">Cadastro realizado!</h1>
+            <p class="subtitulo-confirmacao">Bem-vindo(a) à Vitrine Local, <span class="nome-empresa-confirmado"
+                    id="nome-empresa-exibido">sua empresa</span>.</p>
+        </div>
+
+        <div class="corpo-confirmacao">
+            <h2 class="titulo-proximos-passos">Próximos passos</h2>
+            <div class="lista-proximos-passos">
+                <div class="item-passo">
+                    <div class="numero-passo">1</div>
+                    <div class="conteudo-passo">
+                        <h4>Confirmação por e-mail</h4>
+                        <p>Enviamos um e-mail de boas-vindas com seu acesso. Verifique também a caixa de spam.</p>
+                    </div>
+                </div>
+                <div class="item-passo">
+                    <div class="numero-passo">2</div>
+                    <div class="conteudo-passo">
+                        <h4>Complete seu perfil</h4>
+                        <p>Adicione fotos, horário de funcionamento, endereço e outras informações no seu painel.</p>
+                    </div>
+                </div>
+                <div class="item-passo">
+                    <div class="numero-passo">3</div>
+                    <div class="conteudo-passo">
+                        <h4>Comece a ser encontrado</h4>
+                        <p>Seu negócio já aparecerá nas buscas de clientes da sua região em até 24 horas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grupo-botoes-rodape">
+                <a href="Painel.html" class="botao-ir-painel">Acessar meu painel &rarr;</a>
+                <a href="index.html" class="botao-ir-inicio">Voltar ao início</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var dadosEmpresa = JSON.parse(sessionStorage.getItem('empresa') || '{}');
+        if (dadosEmpresa.nome) {
+            document.getElementById('nome-empresa-exibido').textContent = dadosEmpresa.nome;
+        }
+    </script>
+</body>
+
+</html>

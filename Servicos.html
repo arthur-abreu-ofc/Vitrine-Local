@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Por que nos escolher — Vitrine Local</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #0d0d0d;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .pagina-servicos {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .secao-topo {
+            width: 100%;
+            background: linear-gradient(135deg, #7ee8fa 0%, #1565c0 100%);
+            padding: 64px 64px 56px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 32px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .botao-voltar {
+            display: inline-block;
+            position: absolute;
+            top: 24px;
+            left: 32px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a3a8f;
+            text-decoration: none;
+        }
+
+        .botao-voltar:hover {
+            opacity: 0.7;
+        }
+
+        .botao-cadastro {
+            display: inline-block;
+            position: absolute;
+            top: 24px;
+            right: 32px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            background: #0d0d0d;
+            color: #ffffff;
+            border: none;
+        }
+
+        .botao-cadastro:hover {
+            opacity: 0.85;
+        }
+
+        .titulo-topo {
+            font-size: 62px;
+            font-weight: 800;
+            color: #1a3a8f;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .subtitulo-topo {
+            font-size: 17px;
+            color: rgba(10,30,80,0.75);
+            line-height: 1.6;
+        }
+
+        .lista-cartoes-beneficio {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .cartao-beneficio {
+            background: rgba(255,255,255,0.88);
+            border-radius: 18px;
+            padding: 22px 26px;
+            border: 1px solid rgba(255,255,255,0.7);
+        }
+
+        .cartao-beneficio:hover {
+            box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+        }
+
+        .titulo-cartao-beneficio {
+            font-size: 15px;
+            font-weight: 800;
+            color: #1a3a8f;
+            margin-bottom: 8px;
+        }
+
+        .texto-cartao-beneficio {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
+        }
+
+        .bloco-chamada-final {
+            background: #0d0d0d;
+            border-radius: 20px;
+            padding: 48px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .texto-chamada-final h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .texto-chamada-final p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.65);
+        }
+
+        .botao-chamada-final {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            background: linear-gradient(135deg, #7ee8fa, #1565c0);
+            color: #0d0d0d;
+            white-space: nowrap;
+        }
+
+        .botao-chamada-final:hover {
+            box-shadow: 0 12px 30px rgba(126,232,250,0.4);
+        }
+    </style>
+</head>
+<body>
+<div class="pagina-servicos">
+
+    <div class="secao-topo">
+        <a href="funciona.html" class="botao-voltar">&larr; Voltar</a>
+        <a href="Registro.html" class="botao-cadastro">Cadastre-se</a>
+
+        <div class="texto-topo">
+            <h1 class="titulo-topo">Por que os<br>nossos<br>serviços?</h1>
+            <p class="subtitulo-topo">Conheça os motivos pelos quais centenas de negócios locais escolhem a Vitrine Local para crescer e alcançar mais clientes.</p>
+        </div>
+
+        <div class="lista-cartoes-beneficio">
+            <div class="cartao-beneficio">
+                <h3 class="titulo-cartao-beneficio">Maior visibilidade</h3>
+                <p class="texto-cartao-beneficio">Muitos pequenos negócios não possuem grande presença na internet. O site ajuda essas empresas a serem encontradas com mais facilidade pela comunidade.</p>
+            </div>
+            <div class="cartao-beneficio">
+                <h3 class="titulo-cartao-beneficio">Facilidade para encontrar serviços próximos</h3>
+                <p class="texto-cartao-beneficio">Os usuários conseguem localizar lojas, restaurantes e serviços da região em poucos minutos, economizando tempo e esforço.</p>
+            </div>
+            <div class="cartao-beneficio">
+                <h3 class="titulo-cartao-beneficio">Incentivo ao comércio local</h3>
+                <p class="texto-cartao-beneficio">Ao divulgar empresas da própria cidade ou bairro, o site fortalece a economia local e incentiva o crescimento dos pequenos empreendedores.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="bloco-chamada-final">
+            <div class="texto-chamada-final">
+                <h3>Pronto para crescer?</h3>
+                <p>Cadastre seu negócio agora e comece a atrair mais clientes hoje mesmo.</p>
+            </div>
+            <a href="Registro.html" class="botao-chamada-final">Registrar meu negócio &rarr;</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
